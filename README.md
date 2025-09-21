@@ -1,111 +1,68 @@
-# Public Goods Game: An Interdisciplinary Study
 
-## Project Overview
+# An Interdisciplinary Study of Strategic Behavior: Public Goods Game and Winner's Curse Auction
 
-This repository contains a comprehensive interdisciplinary analysis of a two-player public goods game, integrating perspectives from economic theory, computational science, and behavioral experimentation. The study examines the tension between theoretical predictions and observed behavior in social dilemmas.
+**Author:** Shiqi Chen
 
-**GitHub Repository**: [https://github.com/shiqisc925-hub/public_goods_simple-An-Interdisciplinary-Study/tree/main]
+## Abstract
 
-## Game Parameters
+This project presents an interdisciplinary investigation into strategic decision-making, combining perspectives from economics, computational science, and behavioral science. The study is divided into two parts:
 
-- **Players**: 2
-- **Endowment**: 150 points per player
-- **Efficiency factor**: 1.5
-- **Contribution range**: 0-150 points
-- **Rounds**: 1 (one-shot game)
+1.  **Public Goods Game:** This part analyzes a classic social dilemma through theoretical analysis, computational simulation (using NashPy and QuantEcon), and behavioral experiments (with human participants and LLMs via oTree and DeepSeek). It demonstrates the contrast between the theoretical Nash equilibrium (zero contributions) and observed cooperative behavior, attributing the divergence to social preferences and bounded rationality.
 
-## Project Structure
+2.  **Winner's Curse Auction:** This part explores bounded rationality in decision-making under uncertainty. By designing an experiment with a "noisy signal" treatment, it tests whether LLMs (GPT-4 and DeepSeek) exhibit the "winner's curse" bias. Results show that LLMs are susceptible to this bias, which manifests as a significant erosion of profit potential, measured by a proposed "Profit Efficiency Ratio."
 
-```
-public_goods_simple-An-Interdisciplinary-Study/
-├── economist/                 # Part 1: Theoretical analysis
-│   ├── README.md             # Economic theory documentation
-│   └── references/           # Reference materials
-├── computational_scientist/  # Part 2: Computational verification
-│   ├── notebook.ipynb        # Jupyter notebook with all computations
-│   ├── README.md             # Computational methods guide
-│   └── gte_screenshot      # Game Theory Explorer visualizations
-└── behavioral_scientist/     # Part 3: Experimental analysis
-    ├── otree_app.zip         # Complete oTree experiment
-    ├── README.md             # Experimental setup guide
-    ├── screenshots/          # Experiment interface screenshots
-    └── llm/                  # LLM interaction records
-```
+## Task Summary
 
-## Key Findings
+This repository contains the complete workflow for a multi-method research project:
 
-### Theoretical Prediction (Part 1)
-- **Nash equilibrium**: (0, 0) - both players contribute nothing
-- **Dominant strategy**: Zero contribution is strictly dominant
-- **Welfare implications**: Pareto inefficient but individually rational
+*   **Part 1 - Economist (Theory & Welfare):** Formal game definition, Nash equilibrium analysis, and discussion of efficiency and fairness.
+*   **Part 2 - Computational Scientist:** Solving the game's normal form using `NashPy` and `QuantEcon.py`, and modeling the extensive form using `Game Theory Explorer (GTE)`.
+*   **Part 3 - Behavioral Scientist:** Conducting a modified Public Goods game experiment using `oTree` with human participants and an LLM (DeepSeek), followed by a comparative analysis.
+*   **Problem Set 2 - Winner's Curse:** Design and execution of an auction experiment to test for the winner's curse in LLMs, including prompt design, experiment execution, and results analysis.
 
-### Computational Verification (Part 2)
-- **NashPy & QuantEcon**: Both confirm (0,0) as unique equilibrium
-- **Algorithmic complexity**: Class P (easily computable)
-- **GTE analysis**: Normal form preferred for simultaneous games
+## Reproduction Steps
 
-### Behavioral Results (Part 3)
-- **Human participants**: 100 points contribution (fairness heuristic)
-- **LLM (DeepSeek)**: 100 points contribution (rational calculation)  
-- **Researcher**: 50 points contribution (risk aversion)
-- **Deviation reason**: Social preferences, not computational complexity
+### 1. Public Goods Game Reproduction
 
-## Reproduction Instructions
+#### Theoretical & Computational Analysis (Parts 1 & 2)
+1.  Navigate to the `/computational_scientist` directory.
+2.  Install required packages: `pip install nashpy quantecon`
+3.  Run the provided Python scripts to compute equilibria.
 
-### Part 1: Economist Analysis
-See `economist/README.md` for theoretical framework and mathematical proofs.
+#### Behavioral Experiment (Part 3 - oTree)
+1.  Navigate to `/behavioral_scientist/otree_public_goods`.
+2.  Install oTree: `pip install otree`
+3.  Start the server: `otree devserver` and access via `http://localhost:8000`.
 
-### Part 2: Computational Analysis
-```bash
-cd computational_scientist
-pip install nashpy quantecon
-jupyter notebook notebook.ipynb
-```
+#### Behavioral Experiment (Part 3 - LLM)
+1.  Prompts are documented in the main report and can be found in the `/behavioral_scientist` directory.
+2.  Use the provided prompts in a new chat session with an LLM (e.g., DeepSeek Chat).
 
-### Part 3: Behavioral Experiment
-```bash
-cd behavioral_scientist
-unzip otree_app.zip
-cd public_goods_2p
-pip install otree
-otree devserver
-```
+### 2. Winner's Curse Auction Reproduction
+1.  Navigate to `/winner_curse_auction`.
+2.  Use the prompts provided in the directory to run experiments with GPT-4 or DeepSeek.
+3.  Analyze results using the data files provided in the directory.
 
-## Required Software Citations
+## Dependencies
 
-- **NashPy**: Knight, V., & Campbell, M. (2021). *Journal of Open Source Software*, 6(59), 3075.
-- **QuantEcon**: Sargent, T. J., & Stachurski, J. (2021). Version 0.5.1.
-- **Game Theory Explorer**: Savani, R., & von Stengel, B. (2015). *Computational Management Science* 12, 5–33.
-- **oTree**: Chen, D. L., et al. (2016). *Journal of Behavioral and Experimental Finance*, 9, 88–97.
+*   Python 3.8+
+*   Key packages: `numpy`, `nashpy`, `quantecon`, `otree`, `pandas`
 
-## Main References
+## References
 
-- Osborne, M. J., & Rubinstein, A. (1994). *A course in game theory*. MIT Press.
-- Roughgarden, T. (2016). *Twenty lectures on algorithmic game theory*. Cambridge University Press.
-- Fehr, E., & Schmidt, K. M. (1999). *The Quarterly Journal of Economics*, 114(3), 817–868.
-- Fehr, E., & Gächter, S. (2000). *American Economic Review*, 90(4), 980–994.
+*   Osborne, M. J., & Rubinstein, A. (1994). *A course in game theory*. MIT Press.
+*   Fehr, E., & Schmidt, K. M. (1999). A theory of fairness, competition, and cooperation. *The Quarterly Journal of Economics*.
+*   Knight, V., & Campbell, M. (2021). Nashpy: A Python library for the computation of Nash equilibria. *Journal of Open Source Software*.
+*   Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree. *Journal of Behavioral and Experimental Finance*.
+*   Savani, R., & von Stengel, B. (2015). Game Theory Explorer. *Computational Management Science*.
+*   Kagel, J. H., & Levin, D. (2002). *Common Value Auctions and the Winner's Curse*. Princeton University Press.
+*   Bazerman, M. H., & Samuelson, W. F. (1983). I won the auction but don't want the prize. *Journal of Conflict Resolution*.
 
-## Ethical Considerations
+## Software Citations
 
-This research followed standard ethical guidelines for behavioral experiments:
-- Informed consent from all participants
-- Anonymized data collection and analysis
-- Voluntary participation with right to withdraw
-- Full debriefing after experimental sessions
+*   Nashpy (Knight, 2021)
+*   QuantEcon (Sargent & Stachurski, 2021)
+*   Game Theory Explorer (Savani & von Stengel, 2015)
+*   oTree (Chen, Schonger, & Wickens, 2016)
 
-## Significance and Implications
-
-This study demonstrates:
-1. The persistent gap between theoretical predictions and actual behavior
-2. The importance of social preferences in economic decision-making
-3. The value of interdisciplinary approaches to complex problems
-4. The potential of LLMs as rational agents in behavioral experiments
-
-## Contact Information
-
-For questions about this research, please open an issue in this repository or contact the maintainer.
-
-## License
-
-This project is for academic research purposes only. All rights reserved to the original authors of cited works.
-```
+---
