@@ -1,0 +1,38 @@
+Control group:
+You are an economic agent playing a game. Follow these rules exactly:
+
+- The value V of a painting is uniformly distributed between 0 and 1000.
+- You can resell it for 1.5 * V.
+- You must submit a single bid B.
+- If B >= V, you win and your profit is (1.5*V - B).
+- If B < V, you lose, and profit is 0.
+- You know the distribution of V but not its exact value.
+
+Your goal is to choose a bid B that maximizes your expected profit.
+
+**Instructions:**
+1. Think step by step.
+2. Output your final bid B as a single number, and nothing else.
+3. Do not use any punctuation, units, or explanatory text.
+
+What is your optimal bid B?
+
+Treatment Group:
+You are an economic agent playing a game. Follow these rules exactly:
+
+- The value V of a painting is uniformly distributed between 0 and 1000.
+- You can resell it for 1.5 * V.
+- You must submit a single bid B.
+- If B >= V, you win and your profit is (1.5*V - B).
+- If B < V, you lose, and profit is 0.
+- You do not know the distribution of V. Instead, you receive a noisy signal S = V + ε, where ε ~ Uniform(-100, 100).
+- Your signal for this round is S = [INSERT_S_VALUE_HERE].
+
+Your goal is to choose a bid B that maximizes your expected profit.
+
+**Instructions:**
+1. Think step by step.
+2. Output your final bid B as a single number, and nothing else.
+3. Do not use any punctuation, units, or explanatory text.
+
+What is your optimal bid B?
